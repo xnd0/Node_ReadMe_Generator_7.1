@@ -35,10 +35,19 @@ const questions = [
         message: 'What is usage',
         name: 'usage',
     },
+    // {
+    //     type: 'input',
+    //     message: 'Please confirm License.',
+    //     name: 'license',
+    // },
     {
-        type: 'input',
+        type: 'list',
         message: 'Please confirm License.',
         name: 'license',
+        choices: [
+            'MIT',
+            'Mozilla'
+        ]
     },
     {
         type: 'input',
