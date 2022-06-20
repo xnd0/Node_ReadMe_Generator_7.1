@@ -68,6 +68,17 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
+
+    // --- Badge Display Logic --- //
+    if (data.license === 'MIT') {
+        badgeDisplay = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+    } else if (data.license === 'Mozilla') {
+        badgeDisplay = "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)"
+    };
+
+
+
+    // --- Readme Data --- //
     data =
     `# Node_ReadMe_Generator_7.1
 
@@ -92,7 +103,9 @@ ${data.usage}
 <br>
 ## License:
 ${data.license}
-<br>
+<br>----
+${badgeDisplay}
+<br>-------
 ## Contributions:
 ${data.contribution}
 <br>
