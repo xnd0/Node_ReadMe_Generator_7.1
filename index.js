@@ -24,9 +24,18 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    data = `FILLER ${data.username} testestestetetst
-    filler ${data.location}
-    testetsetsetsetsetset`
+    data = `# Node_ReadMe_Generator_7.1
+
+    ## Title: ${data.username}
+    <br>
+    
+    ## Technologies Used:
+    ${data.languages}
+    <br>
+    
+    ## Description:
+    ${data.location}
+    `
     fs.writeFile(fileName, data, (err) =>
     err ? console.log(err) : console.log('Success!'));
 };
@@ -37,7 +46,7 @@ function init() {
         .prompt(questions)
 
     .then((data) => {
-        const fileName = `${data.username.toLowerCase().split(' ').join('')}.html`;
+        const fileName = `${data.username.toLowerCase().split(' ').join('')}.md`;
         writeToFile(fileName, data, (err) =>
         err ? console.log(err) : console.log('Success!'));
     })     
