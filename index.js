@@ -20,6 +20,41 @@ const questions = [
         message: 'Please enter a brief description.',
         name: 'description',
     },
+    {
+        type: 'input',
+        message: 'Please enter input for a Table of Contents.',
+        name: 'tableOfContents',
+    },
+    {
+        type: 'input',
+        message: 'What are the installation instructions?',
+        name: 'installation',
+    },
+    {
+        type: 'input',
+        message: 'What is usage',
+        name: 'usage',
+    },
+    {
+        type: 'input',
+        message: 'Please confirm License.',
+        name: 'license',
+    },
+    {
+        type: 'input',
+        message: 'Contributions?',
+        name: 'contribution',
+    },
+    {
+        type: 'input',
+        message: 'Are there any tests?',
+        name: 'tests',
+    },
+    {
+        type: 'input',
+        message: 'Do you have any questions to add?',
+        name: 'questions',
+    },
 ];
 
 // TODO: Create a function to write README file
@@ -32,7 +67,29 @@ function writeToFile(fileName, data) {
     
 ## Description:
 ${data.description}
-    
+<br>
+## Table of Contents:
+${data.tableOfContents}
+<br>
+## Installation Instructions:
+${data.installation}
+<br>
+## Usage:
+${data.usage}
+<br>
+## License:
+${data.license}
+<br>
+## Contributions:
+${data.contribution}
+<br>
+## Tests:
+${data.tests}
+<br>
+## Questions:
+${data.questions}
+
+  
 The End!`
     fs.writeFile(fileName, data, (err) =>
         err ? console.log(err) : console.log('Success!'));
