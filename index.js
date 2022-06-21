@@ -61,9 +61,19 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'Do you have any questions to add?',
-        name: 'questions',
+        message: 'Please enter your gitHub username',
+        name: 'github',
     },
+    {
+        type: 'input',
+        message: 'What is your email address?',
+        name: 'email',
+    },
+    // {
+    //     type: 'input',
+    //     message: 'Do you have any questions to add?',
+    //     name: 'questions',
+    // },
 ];
 
 // TODO: Create a function to write README file
@@ -113,9 +123,11 @@ ${data.contribution}
 ${data.tests}
 <br>
 ## Questions:
-${data.questions}
+Email: ${data.email}
+<br>
+gitHub user: ${data.github}
+<br>
 
-  
 The End!`
     fs.writeFile(fileName, data, (err) =>
         err ? console.log(err) : console.log('Success!'));
