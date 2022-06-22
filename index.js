@@ -1,9 +1,9 @@
-// TODO: Include packages needed for this application
+// Include packages needed for this application
 
 const fs = require('fs');
 const inquirer = require('inquirer');
 
-// TODO: Create an array of questions for user input
+// Create an array of questions for user input
 const questions = [
     {
         type: 'input',
@@ -20,11 +20,6 @@ const questions = [
         message: 'Please enter a brief description.',
         name: 'description',
     },
-    // {
-    //     type: 'input',
-    //     message: 'Please enter input for a Table of Contents.',
-    //     name: 'tableOfContents',
-    // },
     {
         type: 'input',
         message: 'What are the installation instructions?',
@@ -35,11 +30,6 @@ const questions = [
         message: 'What is usage',
         name: 'usage',
     },
-    // {
-    //     type: 'input',
-    //     message: 'Please confirm License.',
-    //     name: 'license',
-    // },
     {
         type: 'list',
         message: 'Please confirm License.',
@@ -69,14 +59,9 @@ const questions = [
         message: 'What is your email address?',
         name: 'email',
     },
-    // {
-    //     type: 'input',
-    //     message: 'Do you have any questions to add?',
-    //     name: 'questions',
-    // },
 ];
 
-// TODO: Create a function to write README file
+// Create a function to write README file
 function writeToFile(fileName, data) {
 
     // --- Badge Display Logic --- //
@@ -136,7 +121,7 @@ The End!`
         err ? console.log(err) : console.log('Success!'));
 };
 
-// TODO: Create a function to initialize app
+// Create a function to initialize app
 function init() {
     inquirer
         .prompt(questions)
