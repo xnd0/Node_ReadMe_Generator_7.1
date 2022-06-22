@@ -20,11 +20,11 @@ const questions = [
         message: 'Please enter a brief description.',
         name: 'description',
     },
-    {
-        type: 'input',
-        message: 'Please enter input for a Table of Contents.',
-        name: 'tableOfContents',
-    },
+    // {
+    //     type: 'input',
+    //     message: 'Please enter input for a Table of Contents.',
+    //     name: 'tableOfContents',
+    // },
     {
         type: 'input',
         message: 'What are the installation instructions?',
@@ -103,8 +103,15 @@ function writeToFile(fileName, data) {
 ${data.description}
 <br>
 ## Table of Contents:
-${data.tableOfContents}
+- [0. Description of this App](#description)
+- [1. Installation](#installation)
+- [2. Usage](#usage)
+- [3. Contributions](#contributions)
+- [4. Tests](#tests)
+- [5. Questions](#questions)
+
 <br>
+
 ## Installation Instructions:
 ${data.installation}
 <br>
@@ -128,7 +135,10 @@ Email: ${data.email}
 gitHub user: ${data.github}
 <br>
 
+
+
 The End!`
+
     fs.writeFile(fileName, data, (err) =>
         err ? console.log(err) : console.log('Success!'));
 };
